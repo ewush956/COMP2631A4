@@ -1,0 +1,72 @@
+Objectives:
+* to gain experience with a map interface.
+* to gain experience with binary trees.
+* to gain an understanding of immutable data structures.
+The Problem
+
+For this assignment, you will construct a binary tree. Unlike most
+implementations, however, your tree will be _immutable_. That means
+that no method will actually change the tree. Instead, all operations that
+would normally modify the tree will instead create and return a new copy
+of the tree with the change applied.
+
+You will construct a binary tree representing your family tree (or any
+family tree you wish to show). The root will be you! And the tree will
+show your parents and their parents. See the example below as a guide.
+For each person, the tree stores their name and year of birth.
+
+
+final Fields
+
+To ensure that you do not accidentally modify your tree when an
+operation occurs, you must make all the fields in your node and tree
+classes final.
+While final was used previously for constants, in this instance, we will
+be using it to make the fields unchangeable after the constructor is done.
+When a field is marked final, it can be set in the constructor, but any
+attempt to modify that field in other methods will result in a compilation
+error.
+
+The ImmutableDictionary Interface
+
+The ImmutableDictionary interface has the following operations:
+
+
+* int size()
+Returns the number of keys that have an associated value.
+
+* ImmutableDictionary<T> put(String key, T value)
+Returns a copy of this dictionary with the given value associated with the
+given key. If the given value is already associated with the given key,
+then this should be returned.
+
+* T get(String key) throws NoSuchElementException
+Returns the value associated with the given key, throwing a
+NoSuchElementException if the key has no association. A return value of
+null indicates that null is associated with the given key.
+
+* boolean contains(String key)
+Determines if the given key has an associated value in the dictionary and
+returns true if the key has an associated value in this dictionary; false
+otherwise.
+
+* String[] keys()
+Returns an array with all of the keys that have an associated value in an
+in-order traversal. If `null` has an associated value, then it should be first
+in the array.
+
+* String[] preOrder()
+Returns an array with all of the keys that have an associated value using
+a pre-order traversal of the tree.
+
+* ImmutableDictionary<T> remove(String key)
+Returns a copy of this dictionary with no associated value for the given
+key. If the given key does not have an associated value in this dictionary,
+then this should be returned.
+
+
+Note that the keys in the dictionary are always strings. Keys can have a
+null value. The null key should be sorted before all other keys.
+Submission
+Create an archive folder named Lastname_Firstname_Asg_4 using the
+export option on Eclipse. Submit your zipped folder into D2L.
